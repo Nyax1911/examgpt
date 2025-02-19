@@ -1,5 +1,4 @@
 require('dotenv').config();
-
 const express = require('express');
 const multer = require('multer');
 const pdfParse = require('pdf-parse');
@@ -8,7 +7,7 @@ const path = require('path');
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 // Configuración del SDK de Gemini API
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || 'AIzaSyA_VVjQT9JDwih6bSMpVrUCg0aqd9yr-T8'); // Usar la clave de API de Gemini
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY); // Usar la clave de API de Gemini
 
 // Modelos Gemini, usando getGenerativeModel como en la documentación
 const modelGeminiPro = genAI.getGenerativeModel({ model: "gemini-pro" }); // Modelo Gemini Pro
