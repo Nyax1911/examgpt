@@ -1,0 +1,101 @@
+/* Estilos generales */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+h1, h2 {
+  color: #2c3e50;
+  text-align: center;
+}
+
+form {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+input[type="file"], input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+/* Sección de preguntas */
+#questionsSection, #resultsSection {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.correct {
+  background-color: #d4edda; /* Verde claro */
+  border-left: 5px solid #28a745; /* Verde oscuro */
+  color: #155724;
+}
+
+.incorrect {
+  background-color: #f8d7da; /* Rojo claro */
+  border-left: 5px solid #721c24; /* Rojo oscuro */
+  color: #721c24;
+}
+
+.unanswered {
+  background-color: #fff3cd; /* Amarillo claro */
+  border-left: 5px solid #856404; /* Amarillo oscuro */
+  color: #856404;
+}
+/* Estilo para el texto de la versión */
+#versionText {
+    position: fixed; /* Fijar el texto en la pantalla */
+    bottom: 10px; /* Distancia desde el borde inferior */
+    right: 10px; /* Distancia desde el borde derecho */
+    font-size: 16px; /* Tamaño de fuente pequeño */
+    color: #aaa; /* Color gris claro para que sea sutil */
+    font-family: Arial, sans-serif; /* Fuente legible */
+    opacity: 0.7; /* Opacidad reducida para que no sea intrusivo */
+    text-align: right; /* Alinear el texto a la derecha */
+    pointer-events: none; /* Evitar que el texto sea interactivo */
+}

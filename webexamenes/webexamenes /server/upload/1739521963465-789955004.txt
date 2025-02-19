@@ -1,0 +1,220 @@
+📒
+
+RESUMEN T4: Diseño Web
+4.1. Cajas
+4.2. Modelo de caja tradicional.
+Cajas Flotantes
+Con Float
+Sin Float
+¿Qué es clear ?
+Columnas
+4.3. Modelo de caja flexible
+Contenedor flexible
+Organizando elementos flexibles.
+
+4.1. Cajas
+Los navegadores crean cajas virtuales alrededor de los elementos para marcar
+el área que ocupan.
+Se pueden organizar de estas dos formas:
+Block (bloque): El tamaño es personalizado y generan salto de línea.
+Inline (en línea): Tiene un tamaño predeterminado por caja y no generan.
+Se escriben utilizando la variable display, ejemplo:
+
+RESUMEN T4: Diseño Web
+
+1
+
+header {
+display: block;
+display: inline;
+display: none;
+}
+
+Con el valor none lo que haríamos sería eliminar elementos de la página.
+Podemos usar tambien la propiedad llamaba visibility que nos deja elegir entre
+los valores:
+visible
+hidden
+Aunque lo escondamos, el hueco en la página se quedará.
+
+Usando la variable inline-block conseguimos hacer que los elementos inline
+como <span> puedan tener un tamaño personalizado.
+
+RESUMEN T4: Diseño Web
+
+2
+
+Con esto, nos permite crear secciones en nuestra página web en la misma
+línea.
+
+El conjunto de reglas que dicen como se va a ver una caja, el espacio que va a
+ocupar y como se organiza, se llaman “modelo de cajas.”
+Los estándar de modelos de cajas son:
+El modelo de caja tradicional.
+El modelo de caja flexible.
+
+4.2. Modelo de caja tradicional.
+Usando el elemento float podemos hacer que, en este caso, la imagen flote a la
+izquierda permitiendo al texto ponerse a su derecha.
+
+Con clear podemos hacer que el texto deje el espacio a la derecha de la
+imagen y se quede debajo pero permitiendo que la imagen se quede flotando.
+
+RESUMEN T4: Diseño Web
+
+3
+
+Usando la propiedad overflow hacemos que el contenido no se desborde
+extendiendo el tamaño del contenedor o verlo con sliders.
+
+Cajas Flotantes
+Podemos ver en las siguientes imágenes, que usamos el elemento float para
+hacer que las cajas floten todas a la izquierda por lo que, si no tuvieramos
+float, las cajas se mostrarían una encima de otra.
+
+Con Float
+
+Sin Float
+
+RESUMEN T4: Diseño Web
+
+4
+
+¿Qué es clear ?
+Clear “limpia” el espacio sobrante de los float, para continuar debajo de ellos.
+
+Cuando una caja contiene otras cajas dentro pero tiene la anchura limitada, las
+cajas una vez alcanzadas el límite de la caja padre, se pondrán debajo.
+
+RESUMEN T4: Diseño Web
+
+5
+
+La propiedad z-index se utiliza para mover elementos como si fueran capas,
+hacia delante o hacia detrás:
+z-index: 1
+
+z-index: -1
+
+Columnas
+column-count → Especificamos el número de columnas donde el
+navegador tiene que mostrar el contenido.
+column-width → El ancho de las columnas.
+column-span → Nos dice si los elementos se muestran en varias columnas
+o ninguna. Los valores son:
+all
+none
+column-fill → Rellena las columnas con estas dos propiedades:
+auto → Se completan secuencialmente
+balance → El contendido se divide en partes iguales en todas las
+columnas.
+columns → Podemos declarar tanto el número de columnas como el ancho
+de ellas.
+column-gap → Espaciado entre las columnas.
+column-rule-style → El tipo de línea que dividirá las columnas.
+column-rule-color → El color de la línea.
+
+RESUMEN T4: Diseño Web
+
+6
+
+column-rule-width → En ancho de la línea.
+column-rule → Nos permite definir todos los valores de rule anteriores en
+una misma línea.
+
+4.3. Modelo de caja flexible
+El objetivo de un modelo de caja es ofrecer un mecanismo con el que dividir el
+espacio de la ventana, crear filas y columnas. Sin embargo, lo que ofrece el
+modelo de caja tradicional no cumplen este objetivo.
+
+💡
+
+IMPORTANTE: El modelo de caja flexible es mejor que el modelo de
+caja tradicional, pero se encuentra en fase experimental y alguno
+navegadores no pueden procesar sus propiedades.
+
+Contenedor flexible
+En vez de hacer flotar los elementos, organiza las cajas usando contenedores
+flexibles. Este nuevo modelo, requiere que cada grupo de cajas estén dentro de
+una caja padre. que es la encargada de configurar sus características.
+
+Para que un elemento dentro de un contenedor se vuelva flexible hay que
+declararlo:
+flex-grow → Indica lo que va a expandir o encoger el elemento.
+flex-shrink → Indica que el elemento se va a reducir.
+flex-basis → Indica el tamaño inicial de un elemento.
+flex → nos permite escribir flex-grow, flex-shrink y flex-basis en la misma línea.
+
+La distribución del espacio depende de las propiedades del resto de las cajas.
+Si todas las cajas se configuran como flexibles, el tamaño de cada dependerá
+de la caja padre y el valor flex.
+
+RESUMEN T4: Diseño Web
+
+7
+
+💡
+
+Cuando asignamos el valor 0 a flex-grow y flex-shrink, no deja que se
+expanda o reduzca.
+
+Organizando elementos flexibles.
+Un elemento flexible se muestra horizontalmente por defecto en la misma línea,
+pero no se organiza con la orientación normal. Debemos organizarlo usando
+ejes.
+Eje principal → main-start, main-end. Es el eje del contenido.
+Eje transversal → cross-start, cross-end. Es el eje contrario.
+
+flex-direction → Define el orden de orientación de las cajas.
+row
+row-reverse
+column
+column-reverse
+order → Especifica el orden de las cajas. Acepta número enteros que
+determinan la ubicación de cada caja.
+justify-content → Indica la distribución del espacio libre.
+flex-start
+flex-end
+center
+space-between
+space-around
+aling-items → Alinea las cajas del eje transversal.
+flex-start
+flex-end
+center
+baseline
+
+RESUMEN T4: Diseño Web
+
+8
+
+stretch
+aling-self → Esta propiedad alinea una caja del eje transversal.
+auto
+flex-start
+flex-end
+center
+baseline
+stretch
+flex-wrap → Múltiples líneas de cajas.
+nowrap
+wrap
+wrap-reverse
+aling-content → Alinea las cajas en el eje vertical.
+flex-start
+flex-end
+center
+space-between
+space-around
+stretch
+
+💡
+
+CSS ofrece una propiedad llamada writing-mode que determina la
+orientación de las líneas de texto.
+
+RESUMEN T4: Diseño Web
+
+9
+
+
