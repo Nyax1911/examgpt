@@ -10,7 +10,7 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY); // Usar la clave de API de Gemini
 
 // Modelos Gemini, usando getGenerativeModel como en la documentación
-const modelGeminiPro = genAI.getGenerativeModel({ model: "gemini-pro" }); // Modelo Gemini Pro
+const modelGeminiPro = genAI.getGenerativeModel({ model: "gemini-2.0-flash-thinking-exp-01-21" }); // Modelo Gemini Pro
 // const modelGeminiFlash = genAI.getGenerativeModel({ model: "gemini-2.0-flash" }); // Modelo Gemini Flash 2.0 - ELIMINADO
 
 
