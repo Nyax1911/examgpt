@@ -134,18 +134,18 @@ async function generateExactNumberOfQuestions(text, numQuestions) { // MODELO YA
         // }
 
         const prompt = `
-Eres un asistente experto en generar preguntas basadas en el contenido proporcionado. Tu objetivo es crear preguntas que sean extremadamente difíciles y desafiantes, requiriendo una comprensión profunda y minuciosa del texto.  Las preguntas deben ser:
+Eres un asistente experto en generar preguntas basadas en el contenido proporcionado. Tu objetivo es crear preguntas que sean extremadamente difíciles y desafiantes, requiriendo una comprensión profunda y minuciosa del texto, **centrándose en detalles muy específicos y particulares del contenido**. Las preguntas deben ser:
 
 - Originales: Evita la repetición de ideas o frases del texto original de manera obvia.
-- Muy Difíciles: Las preguntas deben ser intrincadas, demandando inferencias, análisis detallado y atención a los matices del texto.  Algunas preguntas deben centrarse en detalles sutiles o información implícita.
-- Altamente Engañosas: Incluye respuestas falsas que sean extremadamente plausibles.  Las alteraciones en las preguntas falsas deben ser **muy sutiles y casi imperceptibles a una lectura rápida**, utilizando **sinónimos, paráfrasis, cambios numéricos menores, o alteraciones en relaciones sutiles (causa/efecto, orden cronológico, etc.)** que fácilmente podrían pasarse por alto si no se lee con extrema atención.
+- Muy Difíciles: Las preguntas deben ser intrincadas, demandando inferencias, análisis detallado y atención a los matices del texto. Algunas preguntas deben centrarse en **detalles sutiles, información implícita y elementos muy concretos del texto**.
+- Altamente Engañosas: Incluye respuestas falsas que sean extremadamente plausibles. Las alteraciones en las preguntas falsas deben ser **muy sutiles y casi imperceptibles a una lectura rápida**, utilizando **sinónimos, paráfrasis, cambios numéricos menores, o alteraciones en relaciones sutiles (causa/efecto, orden cronológico, etc.)** que fácilmente podrían pasarse por alto si no se lee con extrema atención.
 
 Instrucciones:
 - Genera exactamente ${numQuestions} preguntas.
 - **Todas las preguntas deben ser formuladas para que la respuesta sea SÍ o NO, o VERDADERO o FALSO.**
-- Cada pregunta debe estar basada en detalles específicos del texto proporcionado, pero formulada de manera que no sea una copia directa.
+- Cada pregunta debe estar basada en **detalles específicos y puntuales** del texto proporcionado, pero formulada de manera que no sea una copia directa.
 - Incluye una mezcla de preguntas verdaderas y falsas.
-- Para las preguntas falsas, altera información clave del texto de forma **muy sutil** para que parezcan verdaderas a primera vista, pero sean incorrectas tras un análisis extremadamente cuidadoso.  Concéntrate en detalles pequeños, relaciones sutiles, o inferencias lógicas que puedan inducir a error incluso a lectores atentos.
+- Para las preguntas falsas, altera información clave del texto de forma **muy sutil** para que parezcan verdaderas a primera vista, pero sean incorrectas tras un análisis extremadamente cuidadoso. Concéntrate en **detalles pequeños, relaciones sutiles, o inferencias lógicas que puedan inducir a error** incluso a lectores atentos.
 - No uses signos de interrogación (¿ o ?) en las preguntas.
 - Proporciona una respuesta para cada pregunta indicando "True" (verdadera) o "False" (falsa).
 - Asegúrate de que las preguntas sean claras en su formulación, pero extremadamente desafiantes en su respuesta.
@@ -155,6 +155,8 @@ Formato esperado:
 2. Pregunta 2 - False
 3. Pregunta 3 - True
 ...
+
+**Importante: El guion ("-") entre la pregunta y la respuesta en cada línea es OBLIGATORIO.**   
 
 Texto:
 ${text}
